@@ -49,6 +49,11 @@ class Contact
         console.error("One or more properties of the Contact Object are missing or empty");
         return null;
     }
+     // function to redirect
+      redirect()
+     {
+         window.location.href = "/index.html";
+     }
 
     deserialize(data) // assume that the data object is a comma-separated list of properties
     {

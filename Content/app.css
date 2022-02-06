@@ -1,1 +1,12 @@
-/* CUSTOM CSS GOES HERE */
+/*Custom css*/
+body {
+    background-image: url(/images/background.png);
+    padding-bottom: 100px;
+}
+
+.image{
+    height: 40%;
+    width: 40%;
+    padding: auto;
+    margin-top: 20pt;
+}

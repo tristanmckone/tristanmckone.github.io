@@ -1,11 +1,12 @@
 {
-  "name": "ice3",
+  
+  "name": "Lab01",
   "version": "1.0.0",
-  "description": "ICE 3 test",
+  "description": "repo for WED6201 ICE1",
   "main": "index.js",
-  "repository": "https://github.com/tristanmckone/WEBD6201-W2022-ICEs.git",
-  "author": "Tristan Mckone",
+  "author": "Tuba Sheikh and Tristan Mckone",
   "license": "MIT",
+  
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@popperjs/core": "^2.11.2",
