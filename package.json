@@ -1,16 +1,18 @@
 {
-  
-  "name": "Lab01",
+  "name": "ice5",
   "version": "1.0.0",
-  "description": "repo for WED6201 ICE1",
+  "description": "ICE 5 test",
   "main": "index.js",
-  "author": "Tuba Sheikh and Tristan Mckone",
+  "repository": "https://github.com/tristanmckone/WEBD6201-W2022-ICEs.git",
+  "author": "Tristan Mckone",
   "license": "MIT",
-  
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@popperjs/core": "^2.11.2",
     "bootstrap": "^5.1.3",
     "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.13"
   }
 }

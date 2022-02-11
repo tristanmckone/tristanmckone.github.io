@@ -1,3 +1,8 @@
+
+
+(function (core) {
+    
+
 class Contact
 {
     // public properties (getters / setters)
@@ -49,11 +54,6 @@ class Contact
         console.error("One or more properties of the Contact Object are missing or empty");
         return null;
     }
-     // function to redirect
-      redirect()
-     {
-         window.location.href = "/index.html";
-     }
 
     deserialize(data) // assume that the data object is a comma-separated list of properties
     {
@@ -69,3 +69,5 @@ class Contact
         return `Full Name     : ${this.FullName}\nContact Number: ${this.ContactNumber}\nEmail Address : ${this.EmailAddress}`;
     }
 }
+core.Contact = Contact;
+})(core || (core = {}));

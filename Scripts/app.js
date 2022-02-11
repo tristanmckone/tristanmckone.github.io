@@ -1,342 +1,449 @@
-/**
- * Authors: Tuba Sheikh (100813394) and
- *          Tristan Mckone 100817374
- * Date Completed: 2022-02-02
- * 
- */
+// IIFE -- Immediately Invoked Function Expression
+// AKA Anonymous Self-Executing Function
 (function()
 {
-   // Excecuted when the user navigates to the Home page
-    function DisplayHomePage()
-    {  
-        document.getElementsByTagName("li")[1].innerHTML = `<a class="nav-link" href="products.html"><i class="fas fa-th"></i> Projects</a>`;
 
-        // Step 1 get a reference to an entry point (insterion/deletion point)
-        let MainContent = document.getElementsByTagName("main")[0];
-        let DocumentBody = document.body;
-
-        // Step 2 create an element(s) to insert
-        let MainParagraph = document.createElement("h1");
-        // Welcome message
-        
-        let WelcomeParagraph = document.getElementById("indexText")
-        WelcomeParagraph.setAttribute("id", "WelcomeParagraph");
-        WelcomeParagraph.setAttribute("class", "mt-5 text-center text-light");
-        WelcomeParagraph.innerHTML = `<h1> Welcome to our Site </h1>
-        <br> <h5> This is Tuba's and Tristan's website, you can find links to our projects, services and about us in the navbar! </h5>`;
-
-        // Step 4 add / insert new element
-        MainContent.appendChild(MainParagraph);
-    
-        // Adding link to HR 
-        let NavItems = document.getElementsByTagName("li")[3];
-        let newItem = document.createElement("li");
-        newItem.setAttribute("class", "nav-item");
-        newItem.innerHTML = `<a class="nav-link" href="#"><i class="fas fa-user"></i> Human Resources</a>`;
-        NavItems.after(newItem);
-
-         
-        // Adding a fixed bottom nav bar 
-        let footer = document.createElement("footer");
-        footer.setAttribute("id", "newFooter");
-        
-        MainContent.after(footer);
-
-        let Footer = document.getElementById("newFooter");
-        let NavBottom = document.createElement("nav");
-        NavBottom.setAttribute("class", "navbar fixed-bottom navbar-light bg-light");
-        NavBottom.innerHTML = `<div class="container-fluid">
-        <a class="navbar-brand" href="#">© <span id="year"> </span></a>
-        </div>`;
-        Footer.appendChild(NavBottom);
-        document.getElementById("year").innerHTML = ` CopyRight `+ new Date().getFullYear();
-    }
-
-    // Excecuted when the user navigates to the Products page
-    function DisplayProductsPage()
-    {
-        document.getElementsByTagName("li")[1].innerHTML = `<a class="nav-link active" aria-current="page" href="products.html"><i class="fas fa-th"></i> Projects</a>`;
-        
-        // Adding link to HR 
-        //let NavItems = document.getElementById("aboutus");
-        let NavItems = document.getElementsByTagName("li")[3];
-        let newItem = document.createElement("li");
-        newItem.setAttribute("class", "nav-item");
-        newItem.innerHTML = `<a class="nav-link" href="#"><i class="fas fa-user"></i> Human Resources</a>`;
-        NavItems.after(newItem);
-
-        // Step 1 get a reference to an entry point (insterion/deletion point)
-
-        let Image1 = document.getElementById("img1");
-        // Step 2 create an element(s) to insert
-        let Heading = document.createElement("h1");
-       
-        // Step 3 configure new element
-        Heading.setAttribute("id", "MainParagraph")
-        Heading.setAttribute("class", "mt-3 text-center text-light");
-        Heading.textContent = "Our Projects";
-        
-        // Step 4 add / insert new element
-        Image1.before(Heading);
-        
-
-        // Project 1
-        let Project1Paragraph = document.createElement("h3")
-        Project1Paragraph.setAttribute("id", "Project1Paragraph")
-        Project1Paragraph.setAttribute("class", "mt-5 text-start text-light");
-        Project1Paragraph.textContent = "Project 1: A daily covid case tracker that calculates and displays the weekly average";
-        Image1.before(Project1Paragraph);        
-
-        // Project 2
-        let Image2 = document.getElementById("img2");
-        let Project2Paragraph = document.createElement("h3")
-        Project2Paragraph.setAttribute("id", "Project2Paragraph")
-        Project2Paragraph.setAttribute("class", "mt-5 text-light");
-        Project2Paragraph.textContent = "Project 2: A book tracker that keeps track of authors, their contact info and the books they've published.";
-        Image2.before(Project2Paragraph);
-
-        // Project 3
-        let Image3 = document.getElementById("img3");
-        let Project3Paragraph = document.createElement("h3")
-        Project3Paragraph.setAttribute("id", "Project3Paragraph")
-        Project3Paragraph.setAttribute("class", "mt-5 text-light");
-        Project3Paragraph.textContent = "Project 3: A text Editor that opens, edits and saves text files. It has cut/copy/paste functionality implemented as well.";
-        Image3.before(Project3Paragraph);
-        
-        // Bottom fixed nav bar 
-        let MainContent = document.getElementsByTagName("main")[0];
-        let footer = document.createElement("footer");
-        footer.setAttribute("id", "newFooter");
-        
-        MainContent.after(footer);
-
-        let Footer = document.getElementById("newFooter");
-        let NavBottom = document.createElement("nav");
-        NavBottom.setAttribute("class", "navbar fixed-bottom navbar-light bg-light");
-        NavBottom.innerHTML = `<div class="container-fluid">
-        <a class="navbar-brand" href="#">©<span id="year"> </span></a>
-        </div>`
-        Footer.appendChild(NavBottom);
-        document.getElementById("year").innerHTML = ` CopyRight `+ new Date().getFullYear();
-        
-    }
-
-   //Excecuted when the user navigates to the Services page
-    function DisplayServicesPage()
-    {
-        // Changing products to projects 
-        document.getElementsByTagName("li")[1].innerHTML = `<a class="nav-link" href="products.html"><i class="fas fa-th"></i> Projects</a>`;
-
-        // Adding link to HR 
-        let NavItems = document.getElementsByTagName("li")[3];
-        let newItem = document.createElement("li");
-        newItem.setAttribute("class", "nav-item");
-        newItem.innerHTML = `<a class="nav-link" href="#"><i class="fas fa-user"></i> Human Resources</a>`;
-        NavItems.after(newItem);
-
-
-        // Add the page heading
-        let Image1 = document.getElementById("img1");
-        // Step 2 create an element(s) to insert
-        let Heading = document.createElement("h1");
-        // Step 3 configure new element
-        Heading.setAttribute("id", "MainParagraph")
-        Heading.setAttribute("class", "mt-3 text-center text-light");
-        Heading.textContent = "Our Services\n";
-        // Step 4 add / insert new element
-        Image1.before(Heading);
-
-        // Add webdev info
-        let WebDevtext = document.createElement("p");
-        WebDevtext.setAttribute("class", "mt-3 text-light")
-        WebDevtext.innerHTML = `<h3>Web Development</h3> <br> We are web developers experienced in HTML, CSS, PHP and Currently learning JavaScript.
-        <br> We have experience creating business forms and websites. `;
-        Image1.appendChild(WebDevtext);
-
-        // Add Custom Prog info 
-        let Image2 = document.getElementById("img2");
-        let CustProgtext = document.createElement("p");
-        CustProgtext.setAttribute("class", "mt-3 text-light")
-        CustProgtext.innerHTML = `<h3><br>Custom Programming</h3> <br> From our NETD and OOP courses we have build applications using C++, C#, Java and Python. <br>
-        We have experience building different applications such as forms, trackers and are currently building a card game.`;
-        Image2.appendChild(CustProgtext);
-
-        // Add Automation testing info 
-        let Image3 = document.getElementById("img3");
-        let AutoTestingtext = document.createElement("p");
-        AutoTestingtext.setAttribute("class", "mt-3 text-light")
-        AutoTestingtext.innerHTML = `<h3><br>Automation Testing with Python and Selenium</h3> <br> From our automation testing courses we have experience automating web tests
-        <br> and web surfing. Our skills were demonstrated in a project where a website was tested for bugs `;
-        Image3.appendChild(AutoTestingtext);
-
-        // Bottom fixed nav bar 
-        let MainContent = document.getElementsByTagName("main")[0];
-        let footer = document.createElement("footer");
-        footer.setAttribute("id", "newFooter");
-        
-        MainContent.after(footer);
-
-        let Footer = document.getElementById("newFooter");
-        let NavBottom = document.createElement("nav");
-        NavBottom.setAttribute("class", "navbar fixed-bottom navbar-light bg-light");
-        NavBottom.innerHTML = `<div class="container-fluid">
-        <a class="navbar-brand" href="#">©<span id="year"> </span></a>
-        </div>`
-        //MainContent.after(NavBottom);
-        Footer.appendChild(NavBottom);
-        document.getElementById("year").innerHTML = ` CopyRight `+ new Date().getFullYear();
- 
-    }
-
-    // Excecuted when the user navigates to the About page
     function DisplayAboutPage()
     {
-        document.getElementsByTagName("li")[1].innerHTML = `<a class="nav-link" href="products.html"><i class="fas fa-th"></i> Projects</a>`;
+        console.log("About Us Page");
+    }
 
-        // Adding link to HR 
-        let NavItems = document.getElementsByTagName("li")[3];
-        let newItem = document.createElement("li");
-        newItem.setAttribute("class", "nav-item");
-        newItem.innerHTML = `<a class="nav-link" href="#"><i class="fas fa-user"></i> Human Resources</a>`;
-        NavItems.after(newItem);
+    function DisplayProductsPage()
+    {
+        console.log("Products Page");
+    }
 
+    function DisplayServicesPage()
+    {
+        console.log("Services Page");
+    }
+
+
+    function DisplayHomePage()
+    {
+        console.log("Home Page");
+
+        // let AboutUsButton = document.getElementById("AboutUsButton");
+        // AboutUsButton.addEventListener("click", function()
+        // {
+        //     // redirect to about page
+        //     location.href = "about.html";
+        // });
+
+
+        //jquery way - returns all elements that contain id of aboutusbutton - attached click event to each of them
+          $("#AboutUsButton").on("click", function()
+         {
+                location.href = "about.html";
+         });
+
+         // JavaScript way - returns all elements with id of aboutusbutton loops through all elements
+        //  document.querySelectorAll("#AboutUsButton").forEach(function(element) 
+        //  {
+        //         //attach click event to each each element in the collection
+        //     element.addEventListener("click", function()
+        //     {
+                
+        //         location.href = "about.html";
+        //     })
+        //  }
+        //  );
+
+        // pretty lean
+        // document.querySelector(#AboutUsButton).addEventListener("click", function()
+        // {
+        //     location.href = "about.html";
+        // });
+
+        //old way 4? leanest
+        // document.getElementById("AboutUsButton").addEventListener("click", function()
+        // {
+        //     location.href = "about.html";
+        // })
         
-        // Step 1 get a reference to an entry point (insterion/deletion point)
-        let MainContent = document.getElementById("heading");
-        let DocumentBody = document.body;
+       
 
+        // Step 1 get a reference to an entry point(s) (insertion point / deletion point)
+        //let MainContent = document.getElementsByTagName("main")[0];
+        //let DocumentBody = document.body;
+        
         // Step 2 create an element(s) to insert
-        let MainParagraph = document.createElement("h1");
+        //let MainParagraph = document.createElement("p");
+        //let Article = document.createElement("article");
+        //let ArticleParagraph = `<p id="ArticleParagraph" class="mt-3">This is the Article Paragraph</p>`;
+
         // Step 3 configure new element
-        MainParagraph.setAttribute("id", "MainParagraph")
-        MainParagraph.setAttribute("class", "mt-3 text-center text-light");
-        MainParagraph.textContent = "About us";
+        //MainParagraph.setAttribute("id", "MainParagraph");
+       // MainParagraph.setAttribute("class", "mt-3");
+
+        //let FirstParagraphString = "This is";
+        // example of Template String
+        //let SecondParagraphString = `${FirstParagraphString} the Main Paragraph`;
+
+        //MainParagraph.textContent = SecondParagraphString;
+        //Article.setAttribute("class", "container");
 
         // Step 4 add / insert new element
-        MainContent.appendChild(MainParagraph);
+        //MainContent.appendChild(MainParagraph);
+        $("main").append(`<p id="MainParagraph" class="mt-3"> This is the main Paragraph </p>`);
+        //Article.innerHTML = ArticleParagraph;
+        //DocumentBody.appendChild(Article);
+        $("body").append(`<article class="container">
+        <p id="ArticleParagraph" class="mt-3">This is the Article Paragraph</p> </article>` );
 
-        // Tristan about us 
-        let Imagetristan = document.getElementById("tristanimg");
-        let Tristanparagraph = document.createElement("h3")
-        Tristanparagraph.setAttribute("id", "Tristanparagraph")
-        Tristanparagraph.setAttribute("class", "mt-5 text-light");
-        Tristanparagraph.innerHTML = `Hello, I am Tristan Mckone I am in second year <br> of computer programming at durham college.
-        <br> Here's a <a href="https://docs.google.com/document/d/1RvQf40FBAR1GgMjl4cs63e37mPtxDGki/edit?usp=sharing&ouid=101764303682983186589&rtpof=true&sd=true">link<a> to my resume.`;
-        Imagetristan.before(Tristanparagraph);
 
-        // Tuba about us 
-        let Imagetuba = document.getElementById("tubaimg");
-        let Tubaparagraph = document.createElement("h3")
-        Tubaparagraph.setAttribute("id", "Tristanparagraph")
-        Tubaparagraph.setAttribute("class", "mt-5 text-light");
-        Tubaparagraph.innerHTML = `Hello, I am Tuba Sheikh, currently enroled in<br> second year of computer programming at <br>
-        durham college. Here's a <a href="https://docs.google.com/document/d/1yOpja37hmJ6DzeHvMvET-CW2LzaQqomh/edit?usp=sharing&ouid=118106771298010786721&rtpof=true&sd=true"> link </a> to my resume` ;
-        Imagetuba.before(Tubaparagraph);
+        // Deletion example
+        //document.getElementById("ArticleParagraph").remove();
 
-        // Bottom fixed nav bar 
-        //let MainContent = document.getElementsByTagName("main")[0];
-        let footer = document.createElement("footer");
-        footer.setAttribute("id", "newFooter");
-        
-        MainContent.after(footer);
-
-        let Footer = document.getElementById("newFooter");
-        let NavBottom = document.createElement("nav");
-        NavBottom.setAttribute("class", "navbar fixed-bottom navbar-light bg-light");
-        NavBottom.innerHTML = `<div class="container-fluid">
-        <a class="navbar-brand" href="#">©<span id="year"> </span></a>
-        </div>`
-        //MainContent.after(NavBottom);
-        Footer.appendChild(NavBottom);
-        document.getElementById("year").innerHTML = ` CopyRight `+ new Date().getFullYear();
-
+        // Insert Before example
+        // let NewH1 = document.createElement("h1");
+        // NewH1.setAttribute("class", "display-1");
+        // NewH1.textContent = "Hello, World!";
+        // MainContent.before(NewH1);
     }
 
-    // Executed when the user navigates to the contact page
-    function DisplayContactPage()
+    /**
+     * Adds a Contact Object to local storage
+     *
+     * @param {string} fullName
+     * @param {string} contactNumber
+     * @param {string} emailAddress
+     */
+    function AddContact(fullName, contactNumber, emailAddress)
     {
-        
-        document.getElementsByTagName("li")[1].innerHTML = `<a class="nav-link" href="products.html"><i class="fas fa-th"></i> Projects</a>`;
-
-        // Adding link to HR 
-        //let NavItems = document.getElementById("aboutus");
-        let NavItems = document.getElementsByTagName("li")[3];
-        let newItem = document.createElement("li");
-        newItem.setAttribute("class", "nav-item");
-        newItem.innerHTML = `<a class="nav-link" href="#"><i class="fas fa-user"></i> Human Resources</a>`;
-        NavItems.after(newItem);
-
-        let sendButton = document.getElementById("sendButton");
-        console.log("Contact info")
-
-        sendButton.addEventListener("click", function(event)
-        {     
-            // for debugging 
-            event.preventDefault(); 
-                let contact = new Contact(fullName.value, contactNumber.value, emailAddress.value);
-                console.log(contact.toString());
-
-            // Wait for 3 seconds before redirecting 
-            setTimeout(redirect, 3000);
-        });
-
-        //Function that redirects to home page 
-        function redirect()
+        let contact = new core.Contact(fullName, contactNumber, emailAddress);
+        if(contact.serialize())
         {
-            window.location.replace("../index.html");
+            let key = contact.FullName.substring(0, 1) + Date.now();
+
+            localStorage.setItem(key, contact.serialize());
+        }
+    }
+     /**
+     * This method validates an input text field in the form and displays
+     * an error in the message area div element
+     *
+     * @param {string} input_field_ID
+     * @param {RegExp} regular_expression
+     * @param {string} error_message
+     */
+      function ValidateField(input_field_ID, regular_expression, error_message)
+      {
+          let messageArea = $("#messageArea").hide();
+  
+          $("#" + input_field_ID).on("blur", function()
+          {
+              let input_text_field = $(this).val(); 
+              if(!regular_expression.test(input_text_field)) 
+              {
+                  $(this).trigger("focus").trigger("select"); 
+                  messageArea.addClass("alert alert-danger").text(error_message).show();
+              }
+              else 
+              {
+                  messageArea.removeAttr("class").hide();
+              } 
+          });
+      }
+    function TestFullName()
+    {
+        let messageArea = $("#messageArea").hide();
+        
+        let fullNamePattern = /([A-Z][a-z]{1,25})+(\s|,|-)([A-Z][a-z]{1,25})+(\s|,|-)*/;
+
+        $("#fullName").on("blur", function()
+        {
+            let textContectOfFullName = $(this).val(); // text inside the fullName text box
+
+            if(!fullNamePattern.test(textContectOfFullName)) // if it fails
+            {
+                $(this).trigger("focus"); // go back to fullName text box
+                $(this).trigger("select") // select everything in the fullName text box
+                messageArea.addClass("alert alert-danger");
+                messageArea.text("Please enter a valid Full Name. This must include capitalize fullname, then capitalized lastname")
+                messageArea.show();
+            }
+            else // if it passes
+            {
+                messageArea.removeAttr("class");
+                messageArea.hide();
+            }
+        });
+    }
+
+        function TestContactNumber()
+    {
+        let messageArea = $("#messageArea").hide();
+        let contactNumberPattern = /^(\+\d{1,3}[\s-.])?\(?\d{3}\)?[\s-.]?\d{3}[\s-.]?\d{4}$/;
+
+        $("#contactNumber").on("blur", function()
+        {
+            let textContentOfContactNumber = $(this).val(); // text inside the fullName text box
+            if(!contactNumberPattern.test(textContentOfContactNumber)) // RegExp failed to validate
+            {
+                $(this).trigger("focus"); // go back to the fullName text box
+                $(this).trigger("select"); // select everything in the fullName text box
+                messageArea.addClass("alert alert-danger"); // adds an alert class to the div tag
+                messageArea.text("Please enter a valid Contact Number. Example: (905) 555-5555");
+                messageArea.show();
+            }
+            else // everything is ok
+            {
+                messageArea.removeAttr("class"); // removes the attribute named
+                messageArea.hide();
+            }
+            
+        });
+    }
+
+        function TestEmailAddress()
+        {
+            let messageArea = $("#messageArea").hide();
+        
+        let emailAddressPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$/;
+
+        $("#emailAddress").on("blur", function()
+        {
+            let textContentOfEmailAddress = $(this).val(); // text inside the fullName text box
+
+            if(!emailAddressPattern.test(textContentOfEmailAddress)) // if it fails
+            {
+                $(this).trigger("focus"); // go back to fullName text box
+                $(this).trigger("select") // select everything in the fullName text box
+                messageArea.addClass("alert alert-danger");
+                messageArea.text("Please enter a valid Email Address.")
+                messageArea.show();
+            }
+            else // if it passes
+            {
+                messageArea.removeAttr("class");
+                messageArea.hide();
+            }
+        });
         }
 
-        // Bottom fixed nav bar 
-        let MainContent = document.getElementsByTagName("main")[0];
-        let footer = document.createElement("footer");
-        footer.setAttribute("id", "newFooter");
-        
-        MainContent.after(footer);
+        function ContactFormValidation()
+        {
+            ValidateField("fullName", /^([A-Z][a-z]{1,3}.?\s)?([A-Z][a-z]{1,25})+(\s|,|-)([A-Z][a-z]{1,25})+(\s|,|-)*$/, "Please enter a valid Full Name. This must include capitalize fullname, then capitalized lastname");
+            ValidateField("contactNumber", /^(\+\d{1,3}[\s-.])?\(?\d{3}\)?[\s-.]?\d{3}[\s-.]?\d{4}$/, "Please enter a valid Contact Number. Example: (905) 555-5555");
+            ValidateField("emailAddress", /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$/,"Please enter a valid Email Address.");
 
-        let Footer = document.getElementById("newFooter");
-        let NavBottom = document.createElement("nav");
-        NavBottom.setAttribute("class", "navbar fixed-bottom navbar-light bg-light");
-        NavBottom.innerHTML = `<div class="container-fluid">
-        <a class="navbar-brand" href="#">©<span id="year"> </span></a>
-        </div>`
-        //MainContent.after(NavBottom);
-        Footer.appendChild(NavBottom);
-        document.getElementById("year").innerHTML = ` CopyRight `+ new Date().getFullYear();
+        }
+    
+    function DisplayContactPage()
+    {
+        console.log("Contact Us Page");
+
+        //ValidateField("fullName", /([A-Z][a-z]{1,25})+(\s|,|-)([A-Z][a-z]{1,25})+(\s|,|-)*/, "Please enter a valid Full Name. This must include capitalize fullname, then capitalized lastname");
+        //ValidateField("contactNumber", /^(\+\d{1,3}[\s-.])?\(?\d{3}\)?[\s-.]?\d{3}[\s-.]?\d{4}$/, "Please enter a valid Contact Number. Example: (905) 555-5555");
+        //ValidateField("emailAddress", /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$/,"Please enter a valid Email Address.");
+
+       // TestFullName();
+
+       // TestContactNumber();
+
+       // TestEmailAddress();
+
+       ContactFormValidation();
+
+        let sendButton = document.getElementById("sendButton");
+        let subscribeCheckbox = document.getElementById("subscribeCheckbox");
+
+        sendButton.addEventListener("click", function(event)
+        {
+            //event.preventDefault();
+
+            if(subscribeCheckbox.checked)
+            {
+                AddContact(fullName.value, contactNumber.value, emailAddress.value);
+            }
+        });
     }
 
-    // named function 
-    // Executed when the app starts
+    function DisplayContactListPage()
+    {
+        console.log("Contact-List Page");
+
+        if(localStorage.length > 0) // check if localStorage has something in it 
+        {
+            let contactList = document.getElementById("contactList");
+
+            let data = "";
+
+            let keys = Object.keys(localStorage);
+
+            let index = 1;
+
+            //for every key in the keys collection loop
+            for(const key of keys)
+            {
+                let contactData = localStorage.getItem(key); // retrieve contact data from localStorage
+
+                let contact = new core.Contact(); // create an empty Contact Object
+                contact.deserialize(contactData);
+
+                data += `<tr>
+                <th scope="row" class="text-center">${index}</th>
+                <td>${contact.FullName}</td>
+                <td>${contact.ContactNumber}</td>
+                <td>${contact.EmailAddress}</td>
+                <td class="text-center"><button value="${key}" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i>Edit</button></td>
+                <td class="text-center"><button value="${key}" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt fa-sm"></i>Delete</button></td>
+                </tr>
+                `;
+
+                
+                
+                index++;
+            }
+
+            contactList.innerHTML = data;
+
+            $("#addButton").on("click", () =>
+            {
+                location.href = "edit.html#add";
+            });
+
+            $("button.delete").on("click", function()
+            {
+                if(confirm("Are you sure?"))
+                {
+                    localStorage.removeItem($(this).val());
+                }
+                
+                location.href = "contact-list.html";
+            });
+
+            $("button.edit").on("click", function()
+            {
+                location.href = "edit.html#" + $(this).val();
+            });
+        }
+    }
+
+    function DisplayEditPage()
+    {
+        ContactFormValidation();
+        console.log("Edit Page");
+        
+
+        let page = location.hash.substring(1);
+
+        switch(page)
+        {
+            case "add":
+                {
+                    $("main>h1").text("Add Contact");
+
+                    $("#editButton").html(`<i class="fas fa-plus-circle fa-lg"></i> Add`);
+
+                    $("#editButton").on("click", (event) =>
+                    {
+
+                        event.preventDefault();
+                        // Add Contact
+                        AddContact(fullName.value, contactNumber.value, emailAddress.value);
+                        // Refresh contact list-page
+                        location.href = "contact-list.html";
+                    });
+
+                    $("#cancelButton").on("click", () =>
+                    {
+                        location.href = "contact-list.html";
+                    })
+                    
+                }
+                break;
+            default:
+                {
+                    // get the contact info from local storage
+                    let contact = new core.Contact();
+                    contact.deserialize(localStorage.getItem(page));
+
+                    // display contact info, in edit form
+                    $("#fullName").val(contact.FullName);
+                    $("#contactNumber").val(contact.ContactNumber);
+                    $("#emailAddress").val(contact.EmailAddress);
+
+                    // when Edit is pressed - update the contact
+                    $("#editButton").on("click", (event) =>
+                    {
+                        event.preventDefault();
+
+
+                        // get any changes from the form
+                    contact.FullName =  $("#fullName").val();
+                    contact.ContactNumber = $("#contactNumber").val();
+                    contact.EmailAddress = $("#emailAddress").val();
+
+
+                    // replace the item in local storage
+                    localStorage.setItem(page, contact.serialize());
+
+                    // return to the contact list
+                    location.href = "contact-list.html";
+
+                    });
+
+                    $("#cancelButton").on("click", () =>
+                    {
+                        location.href = "contact-list.html";
+                    })
+
+                    
+                }
+                break;
+        }
+
+    }
+
+    function DisplayLoginPage()
+    {
+        console.log("Login Page");
+    }
+
+    function DisplayRegisterPage()
+    {
+        console.log("Register Page");
+    }
+
+    // named function
     function Start()
     {
         console.log("App Started!!");
 
-        switch(document.title)
+        switch (document.title) 
         {
-            case "Home":
-                DisplayHomePage();
-                break;
-
-            case "Our Products":
-                DisplayProductsPage();
-                break;
-
-            case "Our Services":
-                DisplayServicesPage();
-                break;
-            
-            case "About Us":
-                DisplayAboutPage();
-                break;
-
-            case "Contact Us":
-                DisplayContactPage();
-                break;
-            
+          case "Home":
+            DisplayHomePage();
+            break;
+          case "Contact Us":
+            DisplayContactPage();
+            break;
+          case "Contact-List":
+            DisplayContactListPage();
+            break;
+          case "About Us":
+            DisplayAboutPage();
+            break;
+          case "Our Products":
+            DisplayProductsPage();
+            break;
+          case "Our Services":
+            DisplayServicesPage();
+            break;
+          case "Edit":
+            DisplayEditPage();
+            break;
+            case "Login":
+            DisplayLoginPage();
+            break;
+          case "Register":
+            DisplayRegisterPage();
+            break;
         }
-        
     }
 
     window.addEventListener("load", Start);
 
-    
 })();
