@@ -1,59 +1,68 @@
-(function(core){
+// (function(core)
+// {
+//     class User 
+//     {
+//         // constructor 
+//         constructor(firstName = "", lastName = "", emailAddress="", password = "")
+//         {
+//             this.FirstName = firstName;
+//             this.LastName = lastName;
+//             this.EmailAddress = emailAddress;
+//             this.Password = password;
+//         }
 
-    class User
-    {
-        // constructor
-        constructor(displayName = "", emailAddress= "", username = "", password = "")
-        {
-            this.DisplayName = displayName;
-            this. EmailAddress = emailAddress;
-            this.Username = username;
-            this.Password = password;
-        }
 
-        // overriden functions
-        toString()
-        {
-            return `Display Name : ${this.DisplayName}\nEmail Address : ${thiis.EmailAddress}\nUsername : ${this.Username}`
-        }
+//         // overriden functions
+//         toString()
+//         {
+//             return `First Name : ${this.FirstName}\nLast Name: ${this.LastName}
+//             UserName : ${this.Username}\nEmail Address : ${this.EmailAddress}\n`;
+//         }
 
-        // utility functions
-        toJSON()
-        {
-            return {
-                "DisplayName": this.DisplayName,
-                "EmailAddress": this.EmailAddress,
-                "Username": this.Username
-            }
-        }
+//         // utility functions 
+//         toJSON()
+//         {
+//             return {
+//                 "FirstName": this.FirstName,
+//                 "LastName": this.LastName,
+//                 "Username" : this.Username,
+//                 "EmailAddress": this.EmailAddress
+//             }
+//         }
 
-        fromJSON(data)
-        {
-            this.DisplayName = data.DisplayName;
-            this.EmailAddress = data.EmailAddress;
-            this.Username = data.Username;
-            this.Password = data.Password;
-        }
+//         fromJSON(data)
+//         {
+//             this.FirstName = data.FirstName;
+//             this.LastName = data.Last;
+//             this.Username = data.Username;
+//             this.EmailAddress = data.EmailAddress;
+//             this.Password = data.Password;
+//         }
 
-        // public methods
-        serialize() 
-        {
+//         serialize()
+//         {
+//             if(this.FirstName !== "" && this.LastName !== "" && this.EmailAddress !== "" && this.Username !== "")
+//             {
+//                 return `${this.FirstName},${this.LastName},${this.Username},${this.EmailAddress}`;
+//             }
+//             console.error("One or more properties of the User Object are missing or invalid");
+//             return null;
+//         }
+    
+//         // assume that data is in a comma-separated format (string array of properties)
+//         deserialize(data) 
+//         {
+//             let propertyArray = data.split(",");
+//             this.FirstName = propertyArray[0];
+//             this.LastName = propertyArray[1];
+//             this.Username = propertyArray[2];
+//             this.EmailAddress = propertyArray[3];
+            
+//         }
+//         // never serialize or deserialize passwords :)
 
-            if (this.DisplayName !== "" && this.EmailAddress !== "" && this.Username !== "") {
-                return `${this.DisplayName},${this.EmailAddress},${this.Username}`;
-            }
-            console.error("One or more properties of the Contact Object are missing or empty");
-            return null;
-        }
-        deserialize(data) 
-        {
-            let propertyArray = data.split(",");
-            this.DisplayName = propertyArray[0];
-            this.EmailAddress = propertyArray[1];
-            this.Username = propertyArray[2];
-        }
-    }
+//     }
 
-    core.User = User;
+//     core.User = User;
 
-})(core || (core={}));
+// })(core || (core = {}));

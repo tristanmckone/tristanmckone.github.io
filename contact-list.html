@@ -9,25 +9,26 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="./Content/app.css">
-
+    
     <script src="./Scripts/authguard.js"></script>
-</head>
+    
+  </head>
 <body>
     <header>
-        
     </header>
 
-    <main class="container">
+    <main class="container">  
       <h1>Contact List</h1>
-
+      <!--div.row>div.col>table.table.table-striped.table-bordered.table-hover>(thead.table-dark>tr>th[scope="col"]*5)+(tbody#contactList)-->
       <div class="row">
         <div class="col">
+          
+          <button id="addButton" class="btn btn-primary mb-1"><i class="fas fa-plus-circle">Add Contact</i></button>
 
-          <button id="addButton" class="btn btn-primary mb-1"><i class="fas fa-plus-circle"></i> Add Contact</button>
           <table class="table table-striped table-bordered table-hover">
             <thead class="table-dark">
               <tr>
-                <th scope="col" class="text-center">#</th>
+                <th scope="col" class="text-centre">#</th>
                 <th scope="col">Full Name</th>
                 <th scope="col">Contact Number</th>
                 <th scope="col">Email Address</th>
@@ -35,20 +36,21 @@
                 <th scope="col"></th>
               </tr>
             </thead>
-            <tbody id="contactList">
-            </tbody>
+            <tbody id="contactList"></tbody>
           </table>
         </div>
       </div>
-    </main>
+      
 
-    
-    <!-- Scripting Section -->
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      
+    </main> 
 
+    <!-- Scripting Section-->
     <script src="./Scripts/namespace.js"></script>
     <script src="./Scripts/contact.js"></script>
-    <script src="./Scripts/app.js"></script>
+    <script src="./Scripts/app.js"></script> 
+  
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

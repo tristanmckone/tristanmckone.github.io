@@ -1,10 +1,9 @@
 {
-  "name": "ice6",
+  "name": "lab02",
   "version": "1.0.0",
-  "description": "ICE 6 test",
+  "description": "repo for WED6201 Lab2",
   "main": "index.js",
-  "repository": "https://github.com/tristanmckone/WEBD6201-W2022-ICEs.git",
-  "author": "Tristan Mckone",
+  "author": "Tuba Sheikh and Tristan Mckone",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",

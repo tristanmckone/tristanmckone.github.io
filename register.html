@@ -11,32 +11,33 @@
     <link rel="stylesheet" href="./Content/app.css">
 </head>
 <body>
-    <header>
-        
-    </header>
+    <header></header>
 
     <!-- Main Content -->
     <main class="container" id="mainContent">
       <div class="row">
           <div class="offset-md-3 col-md-6 col-sm-12">
                 <div class="login" id="contentArea">
-                    <h1 class="display-4">Register</h1>
+                    <h1 class="display-4" id="Register">Register</h1>
+
+                    
+
                     <form id="registerForm" novalidate>
                       <p class="hint-text">Create your own account. It's free and only takes a minute.</p>
 
-                      <div class="form-group">
+                      <div class="form-group mb-3">
                         <div class="row">
                           <div class="col-md-6">
                             <input class="form-control" type="text" name="firstName" id="FirstName" placeholder="First Name" required>
                           </div>
                           <div class="col-md-6">
-                            <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+                            <input class="form-control" type="text" name="lastName" id="LastName" placeholder="Last Name" required>
                           </div>
                         </div>
                       </div>
 
                       
-                      <div class="form-group">
+                      <div class="form-group mb-3">
                         <div class="row">
                           <div class="col-md-12">
                             <input type="email" class="form-control" id="emailAddress" name="emailAddress" required
@@ -46,7 +47,7 @@
                         
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group mb-3">
                         <div class="row">
                           <div class="col-md-12">
                             <input type="password" class="form-control" id="password" name="password"  required
@@ -56,7 +57,7 @@
                         
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group mb-3">
                         <div class="row">
                           <div class="col-md-12">
                             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"  required
@@ -67,7 +68,7 @@
                       </div>
                        
                                                           
-                      <div class="text-right">
+                      <div class="text-end">
                         <button id="submitButton" type="submit" class="btn btn-primary btn-lg">Register</button>
                       </div>
                     </form>
@@ -85,6 +86,7 @@
     <!-- Scripting Section -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./Scripts/user.js"></script>
 
     <script src="./Scripts/namespace.js"></script>
     <script src="./Scripts/contact.js"></script>
